@@ -20,14 +20,17 @@
 }
 
 .left textarea{
+    margin-top:10%;
     resize:vertical;
     width:98%;
-    border:2px outset #00a82d;
-    transition:0.2s ease-in-out;
+    border:2px solid #00a82d;
+    transition:0.2s border ease-in-out;
 }
 
 .left textarea:focus{
-    border:2px inset #14cc45;
+    outline: none !important;
+    border-color:#14cc45;
+    
 }
 
 .left button{
