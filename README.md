@@ -10,6 +10,7 @@ uses a postMessage function <br>
 function takes in note parameter<br>
 
 
-still needs an if statement<br>
+if there are no notes, display text that says that there are no notes;
+
 
 
