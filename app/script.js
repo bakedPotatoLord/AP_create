@@ -7,9 +7,13 @@ var notes = []
 var notesString
 
 function addNote(note){
- notes.push( new Note(note))
- displayNotes()
- //document.cookie = JSON.stringify(notes)
+	if(note != ''){
+		notes.push( new Note(note))
+		displayNotes()
+		//document.cookie = JSON.stringify(notes)
+	}else{
+		alert('note must contain at least one character')
+	}
 }
 
 function displayNotes(){
@@ -37,6 +41,7 @@ function deleteNote(id){
 }
 
 window.onload = function(){
+	displayNotes()
 	//notes = JSON.parse(document.cookie)
 	//window.setInterval(displayNotes,500)
 }
@@ -54,8 +59,10 @@ class Note{
 
 		 return `
 		 <div class='note'>
-		 	<a>${this.date.getMonth()}/${this.date.getDate()}, ${this.date.getHours()}:${this.date.getMinutes()}</a>
-			<a>${this.note}<a>
+		 	<div class='text'>
+				<a>${this.date.getMonth()}/${this.date.getDate()}, ${this.date.getHours()}:${this.date.getMinutes()}</a><br>
+				<a>${this.note}<a>
+			</div>
 			<button onclick="deleteNote(${this.id})">Delete Note</button>
 		 </div>
 		 `
