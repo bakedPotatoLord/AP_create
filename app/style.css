@@ -37,7 +37,7 @@
 
 .left{
     width:300px;
-
+    padding:5px;
 }
 
 .left textarea{
@@ -73,8 +73,35 @@
 .right{
     flex:50%;
     text-align:center;
+    padding:5px;
 }
 
 .right h1{
     font-family: 'Montserrat', sans-serif;
+}
+
+.note{
+    border:#14cc45;
+    margin-bottom:10px
+}
+
+.right .notes .note{
+    border:2px solid #00a82d;
+    padding: 5px;
+}
+
+.note button{
+    background-color:#00a82d;
+    border:none;
+    transition:0.2s background ease-in-out;
+    width:auto;
+    font-size:1rem;
+    padding:0.25rem;
+    border-radius:3px;
+    font-family: 'Source Sans Pro', sans-serif;
+    margin-left:5%;
+}
+
+.note button:hover{
+    background-color:#14cc45 ;
 }
