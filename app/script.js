@@ -20,29 +20,43 @@ function displayNotes(){
 		}
 		noteOutput.innerHTML = notesString
 	}else{
-		noteOutput.innerHTML = '<h1>no notes yet.</h1>'
+		noteOutput.innerHTML = '<h3>no notes yet.</h3>'
 	}
+}
+
+function deleteNote(id){
+	//iterate through list
+	for(i in notes){
+		//if id matches, splice the note
+		if(notes[i].id == id){
+			notes.splice(i,1)
+			break
+		}
+	}
+	displayNotes()
 }
 
 window.onload = function(){
 	//notes = JSON.parse(document.cookie)
-	window.setInterval(displayNotes,500)
+	//window.setInterval(displayNotes,500)
 }
 
 class Note{
     constructor(word){
 
         this.note = word
-		  this.date = new Date()
+		this.date = new Date()
+		this.id = Date.now()
 
     }
 
 	 generateHTML(){
 
 		 return `
-		 <div class='notes'>
-		 	<a>${this.date.getMonth()}/${this.date.getDate()}, ${this.date.getHours()}:${this.date.getSeconds()}</a>
+		 <div class='note'>
+		 	<a>${this.date.getMonth()}/${this.date.getDate()}, ${this.date.getHours()}:${this.date.getMinutes()}</a>
 			<a>${this.note}<a>
+			<button onclick="deleteNote(${this.id})">Delete Note</button>
 		 </div>
 		 `
 	 }
