@@ -4,7 +4,7 @@ let noteInput = document.querySelector('.left textarea')
 let noteOutput = document.querySelector('.notes')
 
 var notes = []
-var notesString
+var notesString = ''
 
 function addNote(note){
 	if(note != ''){
