@@ -1,12 +1,33 @@
 
 .header{
     text-align:center;
+    display:flex;
+    border-bottom:2px dashed black;
+    padding-bottom:20px;
 }
-.header h1{
+
+.header img{
+    width:100px;
+}
+
+.header .left{
+    flex:25%;
+}
+
+.header .right{
+    flex:25%;
+}   
+
+.header .text{
+    flex:50%;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.header .text h1{
     margin-bottom: 0;
 }
 
-.header p{
+.header .text p{
     margin-top:0;
 }
 
@@ -25,6 +46,7 @@
     width:98%;
     border:2px solid #00a82d;
     transition:0.2s border ease-in-out;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
 .left textarea:focus{
@@ -40,7 +62,8 @@
     width:100%;
     font-size:1.8rem;
     padding:0.5rem;
-    border-radius:3px
+    border-radius:3px;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
 .left button:hover{
@@ -50,4 +73,8 @@
 .right{
     flex:50%;
     text-align:center;
+}
+
+.right h1{
+    font-family: 'Montserrat', sans-serif;
 }
