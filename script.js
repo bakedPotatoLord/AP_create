@@ -12,7 +12,7 @@ function addNote(note){
 		displayNotes()
 		//document.cookie = JSON.stringify(notes)
 	}else{
-		alert('note must contain at least one character')
+		alert('Note must contain at least one character')
 	}
 }
 
@@ -24,7 +24,7 @@ function displayNotes(){
 		}
 		noteOutput.innerHTML = notesString
 	}else{
-		noteOutput.innerHTML = '<h3>no notes yet.</h3>'
+		noteOutput.innerHTML = '<h3>No notes yet.</h3>'
 	}
 }
 
