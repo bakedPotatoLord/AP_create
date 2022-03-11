@@ -7,21 +7,27 @@ var notes = []
 var notesString = ''
 
 function addNote(note){
+	//checks if note is not empty
 	if(note != ''){
+		//if true, add new note to the array and display it
 		notes.push( new Note(note))
 		displayNotes()
-		//document.cookie = JSON.stringify(notes)
 	}else{
+		//otherwise, alert the error
 		alert('Note must contain at least one character')
 	}
 }
 
 function displayNotes(){
+	//checks if notes array is not empty
 	if(notes.length != 0){
+		//sets the string that will be displayed to empty
 		notesString = ''
+		//adds the stylable code of all notes to the string
 		for(i of notes){
 			notesString += i.generateHTML()
 		}
+		//sets the output innerHTML to the string
 		noteOutput.innerHTML = notesString
 	}else{
 		noteOutput.innerHTML = '<h3>No notes yet.</h3>'
@@ -48,15 +54,14 @@ window.onload = function(){
 
 class Note{
     constructor(word){
-
+		//constructs note
         this.note = word
 		this.date = new Date()
 		this.id = Date.now()
-
     }
-
+	//a method that all Note objects have
 	 generateHTML(){
-
+		//returns note in stylable HTML form
 		 return `
 		 <div class='note'>
 		 	<div class='text'>
