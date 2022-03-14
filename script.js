@@ -23,7 +23,7 @@ function displayNotes(){
 	if(notes.length != 0){
 		//sets the string that will be displayed to empty
 		notesString = ''
-		//adds the stylable code of all notes to the string
+		//adds the styleable code of all notes to the string
 		for(i of notes){
 			notesString += i.generateHTML()
 		}
@@ -65,7 +65,8 @@ class Note{
 		 return `
 		 <div class='note'>
 		 	<div class='text'>
-				<a>${this.date.getMonth()}/${this.date.getDate()}, ${this.date.getHours()}:${this.date.getMinutes()}</a><br>
+				<a>${this.date.getMonth()}/${this.date.getDate()}, ${this.date.getHours()}:
+				${this.date.getMinutes()}</a><br>
 				<a>${this.note}<a>
 			</div>
 			<button onclick="deleteNote(${this.id})">Delete Note</button>
