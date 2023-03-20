@@ -1,10 +1,8 @@
-
+//get HTML elements
 let noteInput = <HTMLElement>document.querySelector('.left textarea')
-
 let noteOutput = <HTMLElement>document.querySelector('.notes')
 
-var notes:Note[] = []
-var notesString = ''
+let notes:Note[] = []
 
 function addNote(note:string){
 	//checks if note is not empty
@@ -35,19 +33,14 @@ function displayNotes(){
 }
 
 function deleteNote(id:number){
-	//iterate through list
+	//splice the node whose ID matches that of the ID parameter
 	notes.splice(
-		notes.findIndex((el)=>el.id == id),
-		1
+		notes.findIndex((el)=>el.id == id),1
 	)
 	displayNotes()
 }
 
-window.onload = function(){
-	displayNotes()
-	//notes = JSON.parse(document.cookie)
-	//window.setInterval(displayNotes,500)
-}
+window.onload = displayNotes
 
 class Note{
 	note:string
@@ -61,7 +54,7 @@ class Note{
 	}
 	//a method that all Note objects have
 	generateHTML(){
-	//returns note in stylable HTML form
+		//returns note in stylable HTML form
 		return `
 		<div class='note'>
 		<div class='text'>
