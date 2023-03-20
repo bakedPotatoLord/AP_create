@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+      "target":"ESNext",
+      "watch": true,
+      "module": "ESNext",
+      "lib":["DOM","ESNext"],
+      "declaration": false,
+      "outDir": "./dist",
+      "esModuleInterop": true,
+      "skipLibCheck": true,
+      "moduleResolution": "node",
+      "sourceMap": true
+  },
+  "include": ["script.ts"],
+  "exclude":["node_modules","./build/*","*.test.ts","*.config.ts"]
+}
