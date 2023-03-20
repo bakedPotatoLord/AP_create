@@ -31,6 +31,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+      - name: install dependencies
+        run: npm ci
+      - name: transpile TS
+        run: npm exec tsc
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact
